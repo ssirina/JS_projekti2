@@ -1,7 +1,7 @@
 body {
   background-color: white;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 button {
@@ -11,9 +11,9 @@ button {
   letter-spacing: 2.5px;
   font-weight: 500;
   color: #FFF;
-  background-color: #963131;
+  background-color: #02697d;
   border: none;
-  border-radius: 45px;
+  border-radius: 15px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   cursor: pointer;
@@ -21,8 +21,8 @@ button {
  }
  
  button:hover {
-  background-color: #571010;
-  box-shadow: 0px 15px 20px #c5adad;
+  background-color: #014452;
+  box-shadow: 0px 15px 20px #8daeb5;
   color: #fff;
   transform: translateY(-7px);
  }
@@ -31,6 +31,7 @@ button {
   transform: translateY(-1px);
  }
 
+ /* Tätä ei tarvita
  button:disabled {
   padding: 1.3em 3em;
   font-size: 12px;
@@ -46,6 +47,7 @@ button {
   cursor: pointer;
   outline: none;
  }
+ */
 
  h1 {
    text-align: center;
@@ -54,8 +56,12 @@ button {
   .container {
     text-align: center;
     padding-top: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .imgcontainer {
+    padding-bottom: 100%;
   }
 
   .col {
@@ -63,6 +69,6 @@ button {
   }
 
   .image {
-      max-height: 90%;
+      max-height: 500px;
       max-width: 100%;
   }
