@@ -1,10 +1,46 @@
 // Tähän tulee eventListenerit
-document.getElementById("hakuBtn").addEventListener("click", haeFakta);
+document.getElementById("hakuBtn").addEventListener("click", haeKaikki);
 
-//funktiot
+//FUNKTIOT
 
+// apiKey 3d1bfe98-e3d7-40ec-b6bb-b9254e328842
+//url https://api.thecatapi.com/v1/images/search
+// url esimerkistä https://thecatapi.com/v1/images?api_key=ABC123
 
-//haetaan 
+function haeKaikki() {
+    haeKuva();
+    haeFakta();
+}
+
+function haeKuva() {
+    console.log("haeKuva()")
+    var request = new XMLHttpRequest;
+    var url = "https://api.thecatapi.com/v1/images/search";
+    //var apiKey = "3d1bfe98-e3d7-40ec-b6bb-b9254e328842";
+
+    //url += apiKey;
+
+    request.open("GET", url, true);
+    request.send();
+
+    request.onreadystatechange = function() {
+        if(request.readyState == 4 && request.status == 200) {
+            console.log(request.responseText);
+            var jsonObjekti = JSON.parse(request.responseText);
+            console.log(jsonObjekti);
+            var kuva = jsonObjekti[0].url;
+            console.log(kuva);
+            naytaKuva(kuva);
+        }
+    }
+}
+
+function naytaKuva(kuva) {
+    console.log(kuva);
+    document.getElementById("image").src = kuva;
+}
+
+//haetaan fakta
 function haeFakta() {
     var request = new XMLHttpRequest;
     var url = "https://meowfacts.herokuapp.com/";
@@ -31,8 +67,6 @@ function parseFakta(fakta) {
 }
 
 //lykätään fakta nätisti esille
-//käytä session storagea laskemaan kuinka monta klikkausta on tehty. Jos klikkauksia on alle 1, tehdään vaan uusi node. Jos enemmän, poistetaan ensin yksi node.
-
 
 function naytaFakta(fakta) {
     //console.log("Tämä fakta näytetään: " + fakta);
@@ -50,5 +84,4 @@ function naytaFakta(fakta) {
     p.appendChild(fakta);
     //laitetaan koko hässäkkä oikealle paikalle dokumenttiin
     document.getElementById("faktapaikka").appendChild(p);
-
 }
