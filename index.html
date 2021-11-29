@@ -6,31 +6,39 @@
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link href="style.css" rel="stylesheet" type="text/css" />
-        <title>Kissafaktageneraattori</title>
+        <title>Cat fact generator</title>
         <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+        </script>
 
     </head>
     <body>
-        <h1>Kissafaktageneraattori</h1>
+        <div>
+            <img id="logo" src="/favicon.png" alt="logo">
+            <h1>Cat fact generator</h1>
+        </div>
         <div class="container">
             <div class="row mt-4">
-                <p>Haetko tietoa kissoista? Tämä sivusto on juuri sinulle!</p>
+                <p id="areYouHere">Are you here for some cat knowledge?</p>
             </div>
             <div class="row mt-4">
-                <button name="haku" id="hakuBtn">Hae fakta</button>
+                <div class="col">
+                    <button name="haku" id="hakuBtn">Get fact</button>
+                </div>
             </div>
-            
             <div class="row mt-4">
-                <div class="col-md-6">
+                <div class="col-md-6" fa-border>
                     <div id="faktaon">
-                        <h2>Faktahan on, että...</h2> 
+                        <h3>The fact is that...</h3> 
                     </div>
                     <div id="faktapaikka">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="imgcontainer">
-                        <img class="image" id="image" src="https://c.ndtvimg.com/2020-08/h5mk7js_cat-generic_625x300_28_August_20.jpg">
+                        <img class="image" id="image" alt="cat image" src="">
                     </div>
                 </div>
                 
